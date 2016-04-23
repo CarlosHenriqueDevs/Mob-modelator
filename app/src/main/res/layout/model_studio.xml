@@ -1,0 +1,102 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+	android:id="@+id/layout_model"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:gravity="center"
+	android:orientation="vertical" >
+	
+	<ImageView
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:src="@drawable/steve" />
+	
+    </LinearLayout>
+
+    <LinearLayout
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:orientation="vertical"
+	android:gravity="left|top" >
+
+	<Spinner
+	    android:id="@+id/model_select_part"
+	    android:layout_width="100dp"
+	    android:layout_height="40dp" />
+
+	<Button
+	    android:layout_width="100dp"
+	    android:layout_height="40dp"
+	    android:text="Aplicar"
+	    android:background="@drawable/background"
+	    android:layout_marginBottom="10dp"
+	    android:onClick="viewPart" />
+
+	<TextView
+	    android:layout_width="100dp"
+	    android:layout_height="40dp"
+	    android:text="Zoom: " />
+
+	<SeekBar
+	    android:id="@+id/model_zoom"
+	    android:layout_marginBottom="10dp"
+	    android:layout_width="100dp"
+	    android:layout_height="40dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:orientation="horizontal"
+	android:gravity="center|top" >
+
+	<TextView
+	    android:id="@+id/model_part_width"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_marginRight="15dp"
+	    android:textSize="20dp"
+	    android:text="largura: " />
+
+	<TextView
+	    android:id="@+id/model_part_height"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:textSize="20dp"
+	    android:text="altura: " />
+
+    </LinearLayout>
+
+    <LinearLayout
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:orientation="vertical"
+	android:gravity="top|right" >
+
+	<Spinner
+	    android:id="@+id/model_part_vision"
+	    android:layout_width="100dp"
+	    android:layout_height="40dp" />
+
+	<Button
+	    android:onClick="setPartOrientation"
+	    android:layout_width="100dp"
+	    android:layout_height="40dp"
+	    android:background="@drawable/background"
+	    android:layout_marginBottom="10dp"
+	    android:text="Aplicar" />
+	
+	<Button
+	    android:layout_width="100dp"
+	    android:layout_height="40dp"
+	    android:onClick="viewModel"
+	    android:background="@drawable/background"
+	    android:text="Modelo" />
+
+    </LinearLayout>
+
+</FrameLayout>

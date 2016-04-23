@@ -10,20 +10,21 @@ public class Part
    private int width;
    private int height;
    public Rect partBox;
-   
+
    public Part()
    {
       this.pixelCoords = new Vector2();
    }
-   
+
    public Part(int x, int y, int width, int height)
    {
+      this.pixelCoords = new Vector2();
       this.pixelCoords.x = x;
       this.pixelCoords.y = y;
       this.width = width;
       this.height = height;
    }
-   
+
    public Part(int x, int y)
    {
       this.pixelCoords.x = x;
@@ -59,9 +60,19 @@ public class Part
    {
       return height;
    }
-   
+
    public Bitmap getTexturePart()
    {
-      return null;
+      Bitmap skin = Model.modelSkin;
+
+      if (skin != null)
+      {
+	 Bitmap part = Bitmap.createBitmap(skin, pixelCoords.x, pixelCoords.y,
+	                                   width, height);
+					   
+	 return part;
+      }
+      else
+	 return null;
    }
 }

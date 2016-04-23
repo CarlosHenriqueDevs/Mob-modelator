@@ -9,11 +9,6 @@
 	android:gravity="center"
 	android:orientation="vertical" >
 	
-	<ImageView
-	    android:layout_width="wrap_content"
-	    android:layout_height="wrap_content"
-	    android:src="@drawable/steve" />
-	
     </LinearLayout>
 
     <LinearLayout
@@ -21,6 +16,11 @@
 	android:layout_height="fill_parent"
 	android:orientation="vertical"
 	android:gravity="left|top" >
+
+	<TextView
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:text="Parte do modelo: " />
 
 	<Spinner
 	    android:id="@+id/model_select_part"
@@ -43,8 +43,59 @@
 	<SeekBar
 	    android:id="@+id/model_zoom"
 	    android:layout_marginBottom="10dp"
-	    android:layout_width="100dp"
+	    android:layout_width="140dp"
 	    android:layout_height="40dp" />
+
+	<Button
+	    android:onClick="addTexture"
+	    android:layout_width="100dp"
+	    android:layout_height="60dp"
+	    android:text="Add Texture"
+	    android:layout_marginBottom="10dp"
+	    android:background="@drawable/background" />
+
+	<Button
+	    android:onClick="addBox"
+	    android:layout_width="140dp"
+	    android:layout_height="40dp"
+	    android:background="@drawable/background"
+	    android:text="Add box" />
+
+	<TextView
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:text="Largura e Altura" />
+
+	<LinearLayout
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:orientation="horizontal" >
+
+	    <EditText
+		android:id="@+id/model_skin_width"
+		android:layout_width="45dp"
+		android:layout_height="45dp"
+		android:textColor="#ffffff"
+		android:inputType="number"
+		android:background="@drawable/edit_text" />
+
+	    <EditText
+		android:id="@+id/model_skin_height"
+		android:layout_width="45dp"
+		android:layout_height="45dp"
+		android:textColor="#ffffff"
+		android:inputType="number"
+		android:layout_marginLeft="10dp"
+		android:background="@drawable/edit_text" />
+
+	</LinearLayout>
+
+	<Button
+	    android:onClick="saveSkin"
+	    android:layout_width="140dp"
+	    android:layout_height="40dp"
+	    android:background="@drawable/background"
+	    android:text="Save Skin" />
 
     </LinearLayout>
 
@@ -77,6 +128,11 @@
 	android:orientation="vertical"
 	android:gravity="top|right" >
 
+	<TextView
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:text="Visualização: " />
+
 	<Spinner
 	    android:id="@+id/model_part_vision"
 	    android:layout_width="100dp"
@@ -89,13 +145,61 @@
 	    android:background="@drawable/background"
 	    android:layout_marginBottom="10dp"
 	    android:text="Aplicar" />
-	
+
 	<Button
-	    android:layout_width="100dp"
+	    android:layout_width="140dp"
 	    android:layout_height="40dp"
 	    android:onClick="viewModel"
 	    android:background="@drawable/background"
-	    android:text="Modelo" />
+	    android:layout_marginBottom="10dp"
+	    android:text="Ver Modelo" />
+
+	<Button
+	    android:onClick="deletePart"
+	    android:layout_width="140dp"
+	    android:layout_height="40dp"
+	    android:background="@drawable/background"
+	    android:text="Apagar Parte" />
+
+	<CheckBox
+	    android:id="@+id/model_code_function"
+	    android:layout_width="100dp"
+	    android:layout_height="40dp"
+	    android:text="function" />
+
+	<Button
+	    android:onClick="viewCode"
+	    android:layout_width="100dp"
+	    android:layout_height="40dp"
+	    android:text="Ver code"
+	    android:background="@drawable/background" />
+
+    </LinearLayout>
+
+    <LinearLayout
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:gravity="bottom|right" >
+
+	<Button
+	    android:onClick="verifyUpdate"
+	    android:layout_width="140dp"
+	    android:layout_height="60dp"
+	    android:background="@drawable/background"
+	    android:text="Verificar update" />
+
+    </LinearLayout>
+
+    <LinearLayout
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:gravity="center|bottom" >
+
+	<TextView
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:textSize="24dp"
+	    android:text="By @CarlosIdeScript" />
 
     </LinearLayout>
 

@@ -12,7 +12,7 @@ public class Model3DView extends GLSurfaceView
    public Model3DView(Context ctx)
    {
       super(ctx);
-      
+
       setRenderer(new ModelRenderView());
    }
 
@@ -33,7 +33,7 @@ public class Model3DView extends GLSurfaceView
       @Override
       public void onDrawFrame(GL10 gl)
       {
-	 glClear(GL10.GL_COLOR_BUFFER_BIT | GL10.GL_DEPTH_BUFFER_BIT);
+	 glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
       }
       
    }

@@ -173,6 +173,12 @@
 	    android:layout_height="40dp"
 	    android:text="Ver code"
 	    android:background="@drawable/background" />
+	
+	<ImageView
+	    android:id="@+id/model_texture"
+	    android:layout_marginTop="20dp"
+	    android:layout_width="100dp"
+	    android:layout_height="40dp" />
 
     </LinearLayout>
 

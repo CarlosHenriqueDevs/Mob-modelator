@@ -1,22 +1,28 @@
 package net.carlos.technepe.model;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.view.SurfaceView;
-import net.carlos.technepe.model.mob.Model;
-import android.graphics.Bitmap;
-import java.io.InputStream;
 import java.io.IOException;
-import android.graphics.BitmapFactory;
+import java.io.InputStream;
+import net.carlos.technepe.model.mob.Model;
 import net.carlos.technepe.model.mob.Part;
+import android.view.MotionEvent;
+import android.graphics.Rect;
+import android.graphics.Paint;
 
 public class Model2DView extends SurfaceView implements Runnable
 {
    public static Thread fpsThread;
    private boolean running = false;
-   private Model model;
+   public Model model;
    private Part head;
+   private Canvas canvas;
+   
+   public boolean addBox = false;
 
    public Model2DView(Context ctx)
    {
@@ -34,8 +40,8 @@ public class Model2DView extends SurfaceView implements Runnable
       }
       catch (IOException e)
       {}
-
-      this.head = new Part(0, 8, 8, 8);
+      
+      this.head = new Part(0, 1, 8, 8);
    }
 
    @Override
@@ -53,7 +59,7 @@ public class Model2DView extends SurfaceView implements Runnable
    {
       if (getHolder().getSurface().isValid())
       {
-	 Canvas canvas = getHolder().lockCanvas();
+	 canvas = getHolder().lockCanvas();
 	 canvas.drawColor(Color.WHITE);
 	 canvas.drawBitmap(head.getTexturePart(), 300, 300, null);
 
@@ -63,7 +69,7 @@ public class Model2DView extends SurfaceView implements Runnable
 
    private void update()
    {
-
+      
    }
 
    private void control()
@@ -74,6 +80,22 @@ public class Model2DView extends SurfaceView implements Runnable
       }
       catch (InterruptedException e)
       {}
+   }
+
+   @Override
+   public boolean onTouchEvent(MotionEvent event)
+   {
+      if (addBox)
+      {
+	 Paint color = new Paint();
+	 color.setColor(Color.BLACK);
+	 Rect rect = new Rect(300, 300, 390, 390);
+	 canvas.drawRect(rect, color);
+	 
+	 addBox = false;
+      }
+      
+      return super.onTouchEvent(event);
    }
 
    public void destroy()
